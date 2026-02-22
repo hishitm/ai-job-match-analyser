@@ -91,7 +91,7 @@ export default function JobCard({ result, resumeSkills, index }) {
                             { id: 'skills', label: '🎯 Skills Match' },
                             { id: 'insights', label: '💡 Insights' },
                             { id: 'improve', label: '🚀 Improve' },
-                            { id: 'ats', label: '🤖 ATS Details' },
+                            { id: 'ats', label: '📊 ATS Details' },
                         ].map(t => (
                             <button
                                 key={t.id}

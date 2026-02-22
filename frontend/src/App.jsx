@@ -7,7 +7,7 @@ import { analyseResume } from './api/client'
 
 const LOADING_STEPS = [
     'Parsing your resume…',
-    'Extracting skills with NLP…',
+    'Extracting and mapping skills…',
     'Fetching job postings…',
     'Analysing skill requirements…',
     'Calculating ATS scores…',
@@ -63,7 +63,7 @@ export default function App() {
             {!result && !loading && (
                 <section className="hero">
                     <div className="hero-eyebrow">
-                        <span>🎯</span> AI-Powered Resume Intelligence
+                        <span>🎯</span> Smart Resume Intelligence
                     </div>
                     <h1>
                         Know Your{' '}
@@ -135,7 +135,7 @@ export default function App() {
             {/* ── Loading ── */}
             {loading && (
                 <div className="loading-overlay">
-                    <div className="loading-orb">🤖</div>
+                    <div className="loading-orb">⚙️</div>
                     <h2 style={{ fontFamily: 'Outfit', fontSize: '1.5rem', fontWeight: 800, marginBottom: 8 }}>
                         Analysing your profile…
                     </h2>
@@ -185,7 +185,7 @@ export default function App() {
                         </div>
                         <div className="strip-divider" />
                         <div className="resume-strip-stat">
-                            <span className="stat-icon">🧠</span>
+                            <span className="stat-icon">🛠️</span>
                             <span className="stat-label">Skills found:</span>
                             <span className="stat-val" style={{ color: 'var(--cyan)' }}>{result.skill_count}</span>
                         </div>
@@ -197,7 +197,7 @@ export default function App() {
                         </div>
                         <div className="strip-divider" />
                         <div className="resume-strip-stat">
-                            <span className="stat-icon">🤖</span>
+                            <span className="stat-icon">📊</span>
                             <span className="stat-label">Overall ATS:</span>
                             <span className="stat-val" style={{
                                 color: result.overall_ats?.ats_score >= 70 ? 'var(--green)'

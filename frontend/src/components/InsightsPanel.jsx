@@ -50,7 +50,7 @@ export default function InsightsPanel({ insights = [], improvements = [], atsDet
             {/* ATS Detail Breakdown */}
             {atsDetails.length > 0 && (
                 <div>
-                    <p className="skill-section-title">🤖 ATS Score Breakdown</p>
+                    <p className="skill-section-title">📊 ATS Score Breakdown</p>
                     {atsDetails.map((d, i) => (
                         <div key={i} className="ats-detail-row">
                             <span className="ats-detail-name">{d.category}</span>

@@ -172,12 +172,12 @@ def match_jobs(found_skills: List[str], experience_level: str) -> List[Dict[str,
 
 def _fit_label(score: float) -> str:
     if score >= 80:
-        return "Excellent Fit"
+        return "Exceptional Match"
     elif score >= 60:
-        return "Good Fit"
+        return "Strong Match"
     elif score >= 40:
-        return "Moderate Fit"
+        return "Good Match"
     elif score >= 20:
-        return "Partial Fit"
+        return "Partial Match"
     else:
-        return "Low Fit"
+        return "Limited Alignment"

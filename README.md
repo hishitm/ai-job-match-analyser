@@ -10,23 +10,26 @@ license: mit
 short_description: Paste job links + upload resume → ATS score, match %, skill gaps & improvements
 ---
 
-# 🎯 AI Job Match Analyser
+# AI Job Match Analyzer
+NLP app to score your resume against any job description and highlight missing skills.
 
-Upload your resume and paste job links from **Internshala, LinkedIn, Naukri, Indeed** and more.
-Get an instant AI-powered breakdown of:
+## Instructions
+1) Upload your resume (PDF or text)
+2) Paste job description or job links (Internshala, LinkedIn, Naukri, Indeed, etc.)
+3) See match score and missing skills
 
-- **Match Score** — how well your skills align with the job
-- **ATS Score** — how resume-scanner-friendly your CV is
-- **Skill Gaps** — skills you have vs. skills the job needs
-- **Insights** — personalised analysis of your candidacy
-- **Improvements** — actionable tips to increase your chances
+![App Screenshot](screenshot.png)
 
-## 🚀 How to Use
+## Overview
+**Problem Description**: Job seekers often apply blindly to roles where they miss keyword filters. This app acts as an ATS scanner to highlight missing skills before applying.
+**Dataset / Sample File**: Pre-loaded with a comprehensive 500+ skill taxonomy mapped to real-world tech and business domains. Users provide their own Resume (PDF/DOCX) and Job URLs.
+**Algorithm Used**: NLP with Regex pattern matching, text tokenization, and custom scoring heuristics based on weighted skill categorization (Hard Skills vs Soft Skills). Web scraping implemented via BeautifulSoup4.
+**Evaluation Metrics**: Evaluated primarily on **Resume Match %** (alignment of skills) and **ATS Score** (readability and keyword optimization format).
+**Insight**: Grouping skills by synonyms (e.g., 'React' vs 'ReactJS') significantly reduced false negatives in skill gap reporting. Moving from simple word counts to weighted keyword extractions provided more realistic ATS simulations.
 
-1. Paste 1–5 job posting URLs into the **Job Links** panel
-2. Upload your **resume/CV** (PDF or DOCX)
-3. Click **Analyse My Profile**
-4. Review your scores, insights, and improvement suggestions
+## Links
+- **Live Demo**: [https://huggingface.co/spaces/hishitm/ai-job-match-analyser](https://huggingface.co/spaces/hishitm/ai-job-match-analyser)
+- **GitHub**: [https://github.com/hishitm/ai-job-match-analyser](https://github.com/hishitm/ai-job-match-analyser)
 
 ## 🛠 Tech Stack
 

@@ -191,8 +191,8 @@ def score_ats(resume_text: str, job_description: str = "") -> Dict[str, Any]:
     final_score = min(score, 100)
 
     return {
-        "ats_score": final_score,
-        "grade": _grade(final_score),
+        "compatibility_index": final_score,
+        "readiness_grade": _grade(final_score),
         "details": details,
         "summary": _ats_summary(final_score)
     }
@@ -208,11 +208,11 @@ def _grade(score: int) -> str:
 
 def _ats_summary(score: int) -> str:
     if score >= 85:
-        return "Excellent ATS compatibility. Your resume is highly optimized for automated screening."
+        return "Excellent professional presentation. Your profile is highly optimized for recruitment standards."
     if score >= 70:
-        return "Good ATS compatibility. Minor improvements can push you into excellent range."
+        return "Strong professional presence. Minor refinements can further enhance your profile's impact."
     if score >= 55:
-        return "Moderate ATS compatibility. Several improvements are recommended."
+        return "Standard profile quality. Several optimizations are recommended to stand out."
     if score >= 40:
-        return "Below average ATS compatibility. Significant formatting and keyword improvements needed."
-    return "Poor ATS compatibility. Major restructuring is recommended before applying."
+        return "Developing profile. Significant structural and keyword improvements are needed."
+    return "Profile needs optimization. A full restucture is recommended for better visibility."

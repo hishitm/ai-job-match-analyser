@@ -32,9 +32,9 @@ except ImportError:
     from backend.scorer import score_match
 
 app = FastAPI(
-    title="AI Job Match Analyser",
-    description="Upload your resume and paste job links — get ATS score, match %, insights & improvements.",
-    version="2.0.0"
+    title="CareerPath - Professional Job Matcher",
+    description="Upload your resume and paste job links — get compatibility scores, career insights & tailored improvements.",
+    version="2.1.0"
 )
 
 app.add_middleware(
@@ -144,19 +144,19 @@ async def analyse(
                     "location": job_data.get("location", ""),
                     "platform": job_data.get("platform", "generic")
                 },
-                "ats_score": ats["ats_score"],
-                "ats_grade": ats["grade"],
-                "ats_summary": ats["summary"],
-                "ats_details": ats["details"],
+                "compatibility_index": ats["compatibility_index"],
+                "readiness_grade": ats["readiness_grade"],
+                "readiness_summary": ats["summary"],
+                "readiness_details": ats["details"],
                 "match_score": match["match_score"],
-                "fit_label": match["fit_label"],
-                "probability": match["probability"],
+                "match_label": match["fit_label"],
+                "match_readiness": match["match_readiness"],
                 "matched_skills": match["matched_skills"],
                 "missing_skills": match["missing_skills"],
                 "matched_by_category": match["matched_by_category"],
                 "missing_by_category": match["missing_by_category"],
                 "insights": match["insights"],
-                "improvements": match["improvements"]
+                "recommendations": match["recommendations"]
             }
         except Exception as e:
             return {
@@ -184,7 +184,7 @@ async def analyse(
         "clusters": skill_data["clusters"],
         "experience_level": skill_data["experience_level"],
         "top_categories": skill_data["top_categories"],
-        "overall_ats": overall_ats,
+        "overall_compatibility": overall_ats,
         "job_results": job_results
     }
 

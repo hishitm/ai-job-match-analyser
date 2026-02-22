@@ -3,9 +3,9 @@ export default function Navbar() {
         <nav className="navbar">
             <div className="navbar-brand">
                 <div className="brand-icon">🎯</div>
-                <span>JobMatch<span style={{ color: 'var(--cyan)' }}>AI</span></span>
+                <span>Career<span style={{ color: 'var(--cyan)' }}>Path</span></span>
             </div>
-            <span className="navbar-badge">⚡ Powered by AI</span>
+            <span className="navbar-badge">⚡ Smart Match</span>
         </nav>
     )
 }

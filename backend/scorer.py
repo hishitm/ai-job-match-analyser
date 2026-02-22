@@ -69,14 +69,14 @@ def score_match(resume_skills: List[str], job_data: Dict[str, Any]) -> Dict[str,
     return {
         "match_score": match_score,
         "fit_label": fit_label,
-        "probability": probability,
+        "match_readiness": probability,
         "matched_skills": matched_skills,
         "missing_skills": missing_skills[:12],
         "matched_by_category": matched_by_cat,
         "missing_by_category": missing_by_cat,
         "jd_skill_count": len(jd_skills),
         "insights": insights,
-        "improvements": improvements
+        "recommendations": improvements
     }
 
 
@@ -89,16 +89,16 @@ def _keyword_fallback_score(resume_skills: List[str], jd_text: str) -> float:
 
 def _get_fit_and_probability(score: float):
     if score >= 85:
-        return "Excellent Fit", {"label": "Very High", "range": "80–95%", "color": "#43E97B"}
+        return "Exceptional Match", {"label": "Highly Qualified", "range": "85–100%", "color": "#10b981"}
     if score >= 70:
-        return "Strong Fit",    {"label": "High",      "range": "65–80%", "color": "#6C63FF"}
+        return "Strong Match",    {"label": "Qualified",      "range": "70–85%", "color": "#3b82f6"}
     if score >= 55:
-        return "Good Fit",      {"label": "Moderate",  "range": "45–65%", "color": "#F7971E"}
+        return "Good Match",      {"label": "Candidate",      "range": "55–70%", "color": "#f59e0b"}
     if score >= 40:
-        return "Partial Fit",   {"label": "Low-Moderate", "range": "25–45%", "color": "#FA8231"}
+        return "Partial Match",   {"label": "Potential",      "range": "40–55%", "color": "#f97316"}
     if score >= 20:
-        return "Low Fit",       {"label": "Low",       "range": "10–25%", "color": "#FF6584"}
-    return "Poor Fit",          {"label": "Very Low",  "range": "<10%",   "color": "#c0392b"}
+        return "Low Alignment",   {"label": "Emerging",       "range": "20–40%", "color": "#ef4444"}
+    return "Weak Alignment",      {"label": "Underqualified", "range": "<20%",   "color": "#991b1b"}
 
 
 def _group_by_category(skills: List[str]) -> List[Dict]:
